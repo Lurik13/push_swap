@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 14:04:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/23 17:16:14 by lribette         ###   ########.fr       */
+/*   Created: 2023/11/23 17:01:47 by lribette          #+#    #+#             */
+/*   Updated: 2023/11/23 17:22:17 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-typedef struct  s_list
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int *liste_a;
-	int *liste_b;   
-}				t_list;
+	size_t	len_s1;
+	size_t	len_s2;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-#include "Printf/ft_printf.h"
-#include <stdlib.h>
-#include <unistd.h>
-#include <stddef.h>
-
-char	**ft_split(char const *s, char c);
-char	*ft_strjoin(char const *s1, char const *s2);
-int	ft_strlen(const char *s);
-
-#endif
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	i = -1;
+	j = -1;
+	str = malloc(len_s1 + len_s2 + 2);
+	if (!str)
+		return (NULL);
+	while (s1[++i])
+		str[i] = s1[i];
+    str[i] = ' ';
+	while (s2[++j])
+		str[i + j + 1] = s2[j];
+	str[i + j + 1] = '\0';
+	return (str);
+}
