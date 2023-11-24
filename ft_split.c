@@ -6,25 +6,11 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:35:40 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/24 12:44:48 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:48:54 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void ft_ischar(char *str)
-{
-	int	i;
-
-	i = -1;
-	while (str[++i])
-	{
-		if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' ' || str[i] == '-')
-			continue ;
-		else
-			ft_error();
-	}
-}
 
 static int	ft_count_words(const char *s, char c)
 {
@@ -86,21 +72,4 @@ char	**ft_split(char const *s, char c)
 	}
 	split[j] = 0;
 	return (split);
-}
-
-char		**ft_main_split(int argc, char **argv)
-{
-	int	i;
-	char	*to_join;
-	char	**to_split;
-
-	i = 1;
-	to_join = argv[i];
-	while (++i < argc)
-		to_join = ft_strjoin(to_join, argv[i], i);
-	ft_ischar(to_join);
-	to_split = ft_split(to_join, ' ');
-	if (i != 2)
-		free(to_join);
-	return (to_split);
 }

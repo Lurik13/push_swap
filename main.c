@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/24 12:38:35 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:37:08 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_error(void)
 {
 	ft_printf("Error\n");
-	exit(0);
+	exit(1);
 }
 
 static void less_than_2_args(int argc)
