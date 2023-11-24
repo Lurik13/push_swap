@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/24 12:02:04 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:38:35 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_error(void)
 
 static void less_than_2_args(int argc)
 {
-	if (argc <= 2)
+	if (argc < 2)
 		ft_error();
 }
 
@@ -33,7 +33,11 @@ int	main(int argc, char **argv)
 	less_than_2_args(argc);
 	tab = ft_main_split(argc, argv);
 	while (++i < ft_listlen(tab))
+	{
 		ft_printf("%s | ", tab[i]);
+		free(tab[i]);
+	}
+	free(tab);
 	return (0);
 }
 	/*i = 0;

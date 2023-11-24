@@ -6,13 +6,13 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:01:47 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/24 11:35:58 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:27:28 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2, int x)
 {
 	size_t	len_s1;
 	size_t	len_s2;
@@ -33,5 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[++j])
 		str[i + j + 1] = s2[j];
 	str[i + j + 1] = '\0';
+	if (x != 2)
+		free(s1);
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:35:40 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/24 12:01:26 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:44:48 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,10 @@ char		**ft_main_split(int argc, char **argv)
 	i = 1;
 	to_join = argv[i];
 	while (++i < argc)
-		to_join = ft_strjoin(to_join, argv[i]);
+		to_join = ft_strjoin(to_join, argv[i], i);
 	ft_ischar(to_join);
 	to_split = ft_split(to_join, ' ');
-	free(to_join);
+	if (i != 2)
+		free(to_join);
 	return (to_split);
 }
