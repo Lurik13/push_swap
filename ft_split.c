@@ -6,11 +6,25 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:35:40 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/23 17:03:02 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:01:26 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void ft_ischar(char *str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+	{
+		if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' ' || str[i] == '-')
+			continue ;
+		else
+			ft_error();
+	}
+}
 
 static int	ft_count_words(const char *s, char c)
 {
@@ -74,18 +88,18 @@ char	**ft_split(char const *s, char c)
 	return (split);
 }
 
-/*int		main(void)
+char		**ft_main_split(int argc, char **argv)
 {
-	int i = 0;
-	char **tab;
+	int	i;
+	char	*to_join;
+	char	**to_split;
 
-	tab = ft_split("bonjour je m'appelle Lucas", ' ');
-	while (i < 5)
-	{
-		printf("string %d : %s\n", i, tab[i]);
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-	return (0);
-}*/
+	i = 1;
+	to_join = argv[i];
+	while (++i < argc)
+		to_join = ft_strjoin(to_join, argv[i]);
+	ft_ischar(to_join);
+	to_split = ft_split(to_join, ' ');
+	free(to_join);
+	return (to_split);
+}

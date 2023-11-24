@@ -6,44 +6,43 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/23 17:59:17 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:02:04 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_error(void)
+void	ft_error(void)
 {
 	ft_printf("Error\n");
 	exit(0);
 }
 
-static void less_than_2(int argc)
+static void less_than_2_args(int argc)
 {
-	if (argc < 2)
-		ft_error()
+	if (argc <= 2)
+		ft_error();
 }
 
 int	main(int argc, char **argv)
 {
 	int	i;
-	char	*str;
+	char	**tab;
 
-	less_than_2(argc);
-	str = "";
-	if (argc > 2)
-	{
-		i = 1;
-		str = argv[i];
-		while (++i < argc)
-		{
-			str = ft_strjoin(str, argv[i]);
-		}
-		ft_printf("%s\n", str);
-	}
-	//ft_split(argv)
+	i = -1;
+	less_than_2_args(argc);
+	tab = ft_main_split(argc, argv);
+	while (++i < ft_listlen(tab))
+		ft_printf("%s | ", tab[i]);
 	return (0);
 }
+	/*i = 0;
+	while (i < )
+	{
+		printf("string %d : %s\n", i, tab[i]);
+		free(tab[i]);
+		i++;
+	}*/
 
 //penser a deuxieme if : on fait un split puis atoi, puis on passe dans la 
 //deuxieme condition

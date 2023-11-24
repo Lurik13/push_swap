@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/23 17:16:14 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:03:54 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ typedef struct  s_list
 #include <stddef.h>
 
 char	**ft_split(char const *s, char c);
+char	**ft_main_split(int argc, char **argv);
 char	*ft_strjoin(char const *s1, char const *s2);
 int	ft_strlen(const char *s);
+int ft_listlen(char **s);
+void	ft_error(void);
 
 #endif
