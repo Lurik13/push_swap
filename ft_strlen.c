@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:01:35 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/24 11:56:16 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:57:59 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 int	ft_strlen(const char *s)
 {
 	int	i;
-	
+
 	i = 0;
 	while (s[i])
 		i++;
 	return (i);
 }
 
-int ft_listlen(char **s)
+int	ft_listlen(char **s)
 {
 	int	i;
-	
+
 	i = 0;
 	while (s[i])
 		i++;

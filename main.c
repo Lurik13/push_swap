@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/24 13:37:08 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:56:53 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_error(void)
 	exit(1);
 }
 
-static void less_than_2_args(int argc)
+static void	less_than_2_args(int argc)
 {
 	if (argc < 2)
 		ft_error();
@@ -26,7 +26,7 @@ static void less_than_2_args(int argc)
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	int		i;
 	char	**tab;
 
 	i = -1;
