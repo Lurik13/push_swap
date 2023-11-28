@@ -6,7 +6,7 @@
 #    By: lribette <lribette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 16:02:35 by lribette          #+#    #+#              #
-#    Updated: 2023/11/27 13:48:08 by lribette         ###   ########.fr        #
+#    Updated: 2023/11/27 15:51:26 by lribette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 SOURCES = Printf/ft_printf.c Printf/ft_putchar.c Printf/ft_putstr.c \
 		  Printf/ft_putnbr.c Printf/ft_putunbr.c Printf/ft_puthexa.c \
 		  Printf/ft_putpointer.c \
-		  ft_split_complements.c ft_split.c ft_strlen.c main.c \
+		  ft_split_complements.c ft_split.c ft_strlen_atoi.c main.c \
 		  push.c rotate.c swap.c
 
 OBJECTS = $(SOURCES:.c=.o)

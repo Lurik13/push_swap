@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:35:40 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/27 13:57:06 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:46:59 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_count_words(const char *s, char c)
 	return (number);
 }
 
-static char	*ft_worddup(const char *s, int start, int end)
+/*static char	*ft_worddup(const char *s, int start, int end)
 {
 	char	*word;
 	int		i;
@@ -45,9 +45,37 @@ static char	*ft_worddup(const char *s, int start, int end)
 		word[i++] = s[start++];
 	word[i] = '\0';
 	return (word);
+}*/
+
+int	ft_split(char const *s, char c, t_list *a, t_list *b)
+{
+	int		i;
+	int		j;
+	int		index;
+
+	a->liste = malloc((ft_count_words(s, c)) * sizeof(int *));
+	b->liste = malloc((ft_count_words(s, c)) * sizeof(int *));
+	if (!s || !a)
+		return (0);
+	i = -1;
+	j = 0;
+	index = -1;
+	while (++i <= (int)ft_strlen(s))
+	{
+		if (s[i] != c && index < 0)
+			index = i;
+		else if ((s[i] == c || i == (int)ft_strlen(s)) && index >= 0)
+		{
+			a->liste[j] = ft_atoi(s, index);
+			index = -1;
+			j++;
+		}
+	}
+	a->len = j;
+	return (1);
 }
 
-char	**ft_split(char const *s, char c)
+/*char	**ft_split(char const *s, char c)
 {
 	char	**split;
 	int		i;
@@ -72,4 +100,4 @@ char	**ft_split(char const *s, char c)
 	}
 	split[j] = 0;
 	return (split);
-}
+}*/

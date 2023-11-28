@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:47:51 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/27 14:04:58 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:14:05 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	ft_ischar(char *str)
 	}
 }
 
-static int	ft_check_dupli(char **to_split)
+/*static int	ft_check_dupli(char **to_split)
 {
 	int	i;
 	int	j;
@@ -80,25 +80,21 @@ static int	ft_check_dupli(char **to_split)
 		}
 	}
 	return (same);
-}
+}*/
 
-char	**ft_main_split(int argc, char **argv)
+void	ft_main_split(int argc, char **argv, t_list *a, t_list *b)
 {
 	int		i;
 	char	*to_join;
-	char	**to_split;
 
 	i = 1;
 	to_join = argv[i];
 	while (++i < argc)
 		to_join = ft_strjoin(to_join, argv[i], i);
 	ft_ischar(to_join);
-	to_split = ft_split(to_join, ' ');
+	ft_split(to_join, ' ', a, b);
 	if (i != 2)
 		free(to_join);
-	if (ft_check_dupli(to_split) == 1)
-		ft_error();
-	return (to_split);
+	/*if (ft_check_dupli(liste_a) == 1)
+		ft_error();*/
 }
-
-//tient dans un int ou s'il y a des doublons

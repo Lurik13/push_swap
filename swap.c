@@ -6,9 +6,19 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:56 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/21 14:23:46 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:18:41 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+/*
+void    sa(t_list *a)
+{
+    
+}
 
+
+void    sb(t_list *b)
+{
+    
+}*/
