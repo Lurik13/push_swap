@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/28 18:59:35 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:03:25 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ int			ft_strlen(const char *s);
 int			ft_listlen(char **s);
 int			ft_atoi(const char *nptr, int i);
 void		ft_error(void);
+void		sa(t_list *a);
+void		sb(t_list *b);
 
 #endif
