@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:56 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/29 14:03:01 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/29 16:05:04 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,10 @@ void	sb(t_list *b)
 		b->liste[b->len - 1] = b->liste[b->len - 2];
 		b->liste[b->len - 2] = tmp;
 	}
+}
+
+void	ss(t_list *a, t_list *b)
+{
+	sa(a);
+	sb(b);
 }

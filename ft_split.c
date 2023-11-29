@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:35:40 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/28 18:46:59 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:24:51 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int	ft_split(char const *s, char c, t_list *a, t_list *b)
 		}
 	}
 	a->len = j;
+	b->len = 0;
 	return (1);
 }
 
