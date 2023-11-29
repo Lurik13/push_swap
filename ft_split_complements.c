@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:47:51 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/28 13:14:05 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/29 13:07:47 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,34 +53,20 @@ static void	ft_ischar(char *str)
 	}
 }
 
-/*static int	ft_check_dupli(char **to_split)
+static void	ft_check_dupli(t_list *a)
 {
 	int	i;
 	int	j;
-	int	k;
-	int	same;
 
 	i = -1;
-	same = 0;
-	while (to_split[++i])
+	while (a->liste[++i])
 	{
 		j = i;
-		while (to_split[++j])
-		{
-			if (to_split[i][0] == to_split[j][0] && j < ft_listlen(to_split))
-			{
-				k = 1;
-				while ((to_split[i][k] == to_split[j][k])
-					&& (to_split[i][k] && to_split[j][k]))
-					k++;
-				if (to_split[i][k - 1] == to_split[j][k - 1]
-					&& (!to_split[i][k] && !to_split[j][k]))
-					same = 1;
-			}
-		}
+		while (a->liste[++j])
+			if (a->liste[i] == a->liste[j])
+				ft_error();
 	}
-	return (same);
-}*/
+}
 
 void	ft_main_split(int argc, char **argv, t_list *a, t_list *b)
 {
@@ -95,6 +81,5 @@ void	ft_main_split(int argc, char **argv, t_list *a, t_list *b)
 	ft_split(to_join, ' ', a, b);
 	if (i != 2)
 		free(to_join);
-	/*if (ft_check_dupli(liste_a) == 1)
-		ft_error();*/
+	ft_check_dupli(a);
 }
