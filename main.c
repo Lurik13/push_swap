@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/29 16:06:20 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:15:24 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ int	main(int argc, char **argv)
 	//ininit_a(&a);
 	pb(&a, &b);
 	pb(&a, &b);
-	//ss(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
+	rrr(&a, &b);
 	
 	ft_printf("A : ");
 	while (++i < a.len)
