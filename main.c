@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/29 17:15:24 by lribette         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:40:14 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 	pb(&a, &b);
 	pb(&a, &b);
 	pb(&a, &b);
-	pb(&a, &b);
+	sa(&a, 1);
 	rrr(&a, &b);
 	
 	ft_printf("A : ");
@@ -73,5 +73,3 @@ int	main(int argc, char **argv)
 	free(a.liste);
 	return (0);
 }
-//tient dans un int
-//tri par nombre de chiffres
