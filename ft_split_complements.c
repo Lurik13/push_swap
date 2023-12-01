@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:47:51 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/29 13:07:47 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/01 18:34:22 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,38 @@ static void	ft_ischar(char *str)
 			|| (str[i] == '-' && str[i + 1] >= '0' && str[i] <= '9'))
 			continue ;
 		else
+		{
+			free(str);
 			ft_error();
+		}
 	}
 }
 
-static void	ft_check_dupli(t_list *a)
+static void	ft_check_dupli(t_list *a, t_list *b)
 {
 	int	i;
 	int	j;
+	//int	k = 0;
 
 	i = -1;
-	while (a->liste[++i])
+	/*while (a->liste[k] && k < a->len)
+	{
+		ft_printf("i = %d -> %d\n", k, a->liste[k]);
+		k++;
+	}
+	ft_printf("%d\n", a->liste[k]);*/
+	
+	while (++i < a->len - 1 && a->liste[i])
 	{
 		j = i;
-		while (a->liste[++j])
+		while (++j < a->len && a->liste[j])
+		{
 			if (a->liste[i] == a->liste[j])
+			{
+				ft_free(a, b);
 				ft_error();
+			}
+		}
 	}
 }
 
@@ -81,5 +97,5 @@ void	ft_main_split(int argc, char **argv, t_list *a, t_list *b)
 	ft_split(to_join, ' ', a, b);
 	if (i != 2)
 		free(to_join);
-	ft_check_dupli(a);
+	ft_check_dupli(a, b);
 }

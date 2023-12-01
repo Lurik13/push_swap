@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:01:35 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/28 19:01:07 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/01 18:35:54 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_listlen(char **s)
 	return (i);
 }
 
-int	ft_atoi(const char *nptr, int i)
+int	ft_atoi(char *nptr, int i, t_list *a, t_list *b)
 {
 	long long		integer;
 	int				nega;
@@ -52,6 +52,10 @@ int	ft_atoi(const char *nptr, int i)
 		i++;
 	}
 	if (integer * nega > 2147483647 || integer * nega < -2147483648)
+	{
+		ft_free(a, b);
+		free(nptr);
 		ft_error();
+	}
 	return (integer * nega);
 }
