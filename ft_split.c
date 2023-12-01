@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:35:40 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/01 18:35:00 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:33:23 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_count_words(const char *s, char c)
 	return (number);
 }
 
-static int	*ft_calloc(int nbelem, int size)
+int	*ft_calloc(int nbelem, int size)
 {
 	int	*str;
 	int		i;
