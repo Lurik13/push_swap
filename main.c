@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/01 18:06:27 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/01 19:31:20 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ void	ft_free(t_list *a, t_list *b)
 	free(b->liste);	
 }
 
-static void	less_than_2_args(int argc)
+static void	less_than_2_args(int argc, char **argv)
 {
+	if (argc == 2 && !ft_ischar(argv[1]))
+		ft_error();
 	if (argc <= 2)
 		exit(1);
 }
@@ -40,7 +42,7 @@ int	main(int argc, char **argv)
 	a.liste = NULL;
 	b.liste = NULL;
 	i = -1;
-	less_than_2_args(argc);
+	less_than_2_args(argc, argv);
 	ft_main_split(argc, argv, &a, &b);
 	
 	

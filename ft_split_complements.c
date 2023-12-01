@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:47:51 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/01 18:34:22 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/01 19:29:50 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,13 @@ static char	*ft_strjoin(char *s1, char const *s2, int x)
 	return (str);
 }
 
-static void	ft_ischar(char *str)
+int	ft_ischar(char *str)
 {
 	int	i;
+	int	error;
 
 	i = -1;
+	error = 1;
 	while (str[++i])
 	{
 		if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' '
@@ -50,10 +52,11 @@ static void	ft_ischar(char *str)
 			continue ;
 		else
 		{
-			free(str);
-			ft_error();
+			error = 0;
+			break ;
 		}
 	}
+	return (error);
 }
 
 static void	ft_check_dupli(t_list *a, t_list *b)
@@ -93,7 +96,11 @@ void	ft_main_split(int argc, char **argv, t_list *a, t_list *b)
 	to_join = argv[i];
 	while (++i < argc)
 		to_join = ft_strjoin(to_join, argv[i], i);
-	ft_ischar(to_join);
+	if (!ft_ischar(to_join))
+	{
+		ft_free(a, b);
+		ft_error();
+	}
 	ft_split(to_join, ' ', a, b);
 	if (i != 2)
 		free(to_join);

@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/01 18:35:41 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/01 19:30:17 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_list
 	int	len;
 }t_list;
 
+int			ft_ischar(char *str);
 void		ft_main_split(int argc, char **argv, t_list *a, t_list *b);
 int			ft_split(char *s, char c, t_list *a, t_list *b);
 int			ft_strlen(const char *s);
