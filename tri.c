@@ -6,57 +6,63 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 14:56:35 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/03 20:40:12 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/03 23:27:22 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//void static	two_thirds(t_list *a, )
-
-void	init(t_list *a, t_list *b)
+void static	two_thirds(t_list *a, int index, int len_divised, t_list *b)
 {
-	int	len;
+	pb(a, b);
+	if (index > len_divised)
+		rb(b, 1);
+}
 
-	len = a->len / 3 * 2;
-	while (b->len < len /*&& a->len > 3*/)
+static void	thirds(t_list *a, t_list *b, int onethird, int twothirds)
+{
+	while (b->len < twothirds && a->len != 3)
 	{
-		//ft_printf("\ni = %d\nMoitie=%d   Len=%d\ni[0]=%d\n", i, len / 2, len, a->index[0]);
-		if (a->index[0] <= len)
+		if (a->index[0] <= twothirds)
+			two_thirds(a, a->index[0], onethird, b);
+		else if (a->index[a->len - 1] <= twothirds)
 		{
-			//ft_printf("\ni[0]=%d\n", a->index[0]);
-			pb(a, b);
-			if (b->index[0] <= len / 2)
-				continue ;
-			else
-				rb(b, 1);
-		}
-		else if (a->index[1] <= len)
-		{
-			//ft_printf("\ni[1]=%d\n", a->index[1]);
-			sa(a, 1);
-			pb(a, b);
-			if (b->index[0] <= len / 2)
-				continue ;
-			else
-				rb(b, 1);
-		}
-		else if (a->index[a->len - 1] <= len)
-		{
-			//ft_printf("\ni[fin]=%d\n", a->index[a->len - 1]);
 			rra(a, 1);
-			pb(a, b);
-			if (b->index[0] <= len / 2)
-				continue ;
-			else
-				rb(b, 1);
+			two_thirds(a, a->index[0], onethird, b);
 		}
 		else
-			while (a->index[0] > len && b->len < len)
+			while (a->index[0] > twothirds && b->len < twothirds)
 				ra(a, 1);
 	}
 }
 
+void	first_sort(t_list *a, t_list *b)
+{
+	int	twothirds;
+	int	onethird;
+	int	tmp;
 
+	twothirds = a->len / 3 * 2;
+	onethird = a->len / 3;
+	tmp = twothirds;
+	while (a->len != 3)
+	{
+		thirds(a, b, onethird, twothirds);
+		tmp = twothirds;
+		twothirds += onethird / 3 * 2;
+		onethird = tmp + onethird / 3;
+	}
+}
+void	second_sort(t_list *a)
+{
+	if ((a->index[0] > a->index[2] && a->index[2] > a->index[1])
+		|| (a->index[1] > a->index[2] && a->index[2] > a->index[0]))
+		ra(a, 1);
+	if ((a->index[2] > a->index[0] && a->index[0] > a->index[1])
+		|| (a->index[0] > a->index[1] && a->index[1] > a->index[2]))
+		sa(a, 1);
+	if (a->index[1] > a->index[0] && a->index[0] > a->index[2])
+		rra(a, 1);
+}
 
-//1 105 7 6 45 26 48 96 20 35 29 34 78
+//1 105 7 26 45 35 48 96 20 6 29 34 78

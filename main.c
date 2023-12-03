@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/03 20:36:21 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/03 23:27:50 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ int	main(int argc, char **argv)
 	while (++i < a.len + b.len)
 		ft_printf("%d | ", b.index[i]);*/
 
-	init(&a, &b);
+	first_sort(&a, &b);
+	second_sort(&a);
 
 	/*ft_printf("\nA       : ");
 	i = -1;
