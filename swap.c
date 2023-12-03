@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:56 by lribette          #+#    #+#             */
-/*   Updated: 2023/11/30 15:38:02 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:14:50 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 void	sa(t_list *a, int dble)
 {
-	int	tmp;
+	int	value_tmp;
+	int	index_tmp;
 	
 	if (a->len > 1)
 	{
-		tmp = a->liste[a->len - 1];
-		a->liste[a->len - 1] = a->liste[a->len - 2];
-		a->liste[a->len - 2] = tmp;
+		value_tmp = a->liste[0];
+		index_tmp = a->index[0];
+		a->liste[0] = a->liste[1];
+		a->index[0] = a->index[1];
+		a->liste[1] = value_tmp;
+		a->index[1] = index_tmp;
 		if (dble)
 			ft_printf("sa\n");
 	}
@@ -28,13 +32,17 @@ void	sa(t_list *a, int dble)
 
 void	sb(t_list *b, int dble)
 {
-	int	tmp;
+	int	value_tmp;
+	int	index_tmp;
 	
 	if (b->len > 1)
 	{
-		tmp = b->liste[b->len - 1];
-		b->liste[b->len - 1] = b->liste[b->len - 2];
-		b->liste[b->len - 2] = tmp;
+		value_tmp = b->liste[0];
+		index_tmp = b->index[0];
+		b->liste[0] = b->liste[1];
+		b->index[0] = b->index[1];
+		b->liste[1] = value_tmp;
+		b->index[1] = index_tmp;
 		if (dble)
 			ft_printf("sb\n");
 	}

@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/01 22:26:03 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:26:36 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,36 +34,60 @@ static void	less_than_2_args(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	int		i;
 	t_list	a;
 	t_list	b;
 
 	a.liste = NULL;
 	b.liste = NULL;
-	i = -1;
 	less_than_2_args(argc, argv);
 	ft_main_split(argc, argv, &a, &b);
 	
 	
-	ft_index(&a);
-	//init(&a, &b);
-	
-	ft_printf("A     : ");
-	while (++i < a.len)
+	ft_index(&a, &b);
+
+	/*int		i;
+	ft_printf("\nA       : ");
+	i = -1;
+	while (++i < a.len + b.len)
 		ft_printf("%d | ", a.liste[i]);
 	i = -1;
-	ft_printf("\nB     : ");
-	while (++i < b.len)
+	ft_printf("\nIndex A : ");
+	while (++i < a.len + b.len)
+		ft_printf("%d | ", a.index[i]);
+	i = -1;
+	ft_printf("\nB       : ");
+	while (++i < a.len + b.len)
 		ft_printf("%d | ", b.liste[i]);
 	i = -1;
-	ft_printf("\nIndex : ");
-	while (++i < a.len)
+	ft_printf("\nIndex B : ");
+	while (++i < a.len + b.len)
+		ft_printf("%d | ", b.index[i]);*/
+
+	init(&a, &b);
+
+	/*ft_printf("\nA       : ");
+	i = -1;
+	while (++i < a.len + b.len)
+		ft_printf("%d | ", a.liste[i]);
+	i = -1;
+	ft_printf("\nIndex A : ");
+	while (++i < a.len + b.len)
 		ft_printf("%d | ", a.index[i]);
+	i = -1;
+	ft_printf("\nB       : ");
+	while (++i < a.len + b.len)
+		ft_printf("%d | ", b.liste[i]);
+	i = -1;
+	ft_printf("\nIndex B : ");
+	while (++i < a.len + b.len)
+		ft_printf("%d | ", b.index[i]);*/
+
 	ft_free(&a, &b);
 	free(a.index);
-	//free(b.index);
+	free(b.index);
 	return (0);
 }
 
 //test 0 en arg
 //1 2 4 7 3 5 9 12 6
+//gerer le unsigned long long max

@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:47:51 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/01 19:29:50 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/03 17:16:20 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,8 @@ static void	ft_check_dupli(t_list *a, t_list *b)
 {
 	int	i;
 	int	j;
-	//int	k = 0;
 
 	i = -1;
-	/*while (a->liste[k] && k < a->len)
-	{
-		ft_printf("i = %d -> %d\n", k, a->liste[k]);
-		k++;
-	}
-	ft_printf("%d\n", a->liste[k]);*/
-	
 	while (++i < a->len - 1 && a->liste[i])
 	{
 		j = i;

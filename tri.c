@@ -5,65 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 16:04:22 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/01 22:36:46 by lribette         ###   ########.fr       */
+/*   Created: 2023/12/03 14:56:35 by lribette          #+#    #+#             */
+/*   Updated: 2023/12/03 18:21:46 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	imax(t_list *a, long long ancien_max)
+void	init(t_list *a, t_list *b)
 {
 	int	i;
-	int	index_max;
+    int len;
 
 	i = 0;
-	while (i < a->len && a->index[i] != 0)
-		i++;
-	index_max = i;
-	while (i < a->len)
+    len = a->len / 3;
+	while (i < len /*&& a->len > 3*/)
 	{
-		if (ancien_max > a->len && a->liste[i] > a->liste[index_max])
-			index_max = i;
-		else if (a->liste[i] > a->liste[index_max]
-			&& a->liste[i] < a->liste[ancien_max])
-			index_max = i;
-		i++;
-	}
-	return (index_max);
-}
-
-void	ft_index(t_list *a)
-{
-	int	i;
-	int	len;
-	long long maxi;
-
-	i = 0;
-	len = a->len;
-	a->index = ft_calloc(a->len, sizeof(int));
-	//b->index = ft_calloc(a->len, sizeof(int));
-	maxi = imax(a, 2147483648);
-	a->index[maxi] = len;
-	while (len - 1)
-	{
-		maxi = imax(a, maxi);
-		a->index[maxi] = len - 1;
-		len--;
-		i++;
+        //ft_printf("\ni=%d\n", i);
+		if (a->index[0] <= len)
+        {
+            //ft_printf("\nindex=%d <= %d\n", a->index[0], len);
+            pb(a, b);
+            i++;
+        }
+        else if (a->index[1] <= len)
+        {
+            //ft_printf("index=%d <= %d\n", a->index[1], len);
+            sa(a, 1);
+            pb(a, b);
+            i++;
+        }
+        else if (a->index[a->len - 1] <= len)
+        {
+            //ft_printf("index=%d <= %d\n", a->index[a->len - 1], len);
+            rra(a, 1);
+            pb(a, b);
+            i++;
+        }
+        else
+            while (a->index[0] > len)
+            {
+                //ft_printf("index=%d   |   len=%d\n", a->index[0], len);
+                ra(a, 1);
+            }
 	}
 }
 
-/*void	init(t_list *a, t_list *b)
-{
-	while (a->len > 3)
-	{
-		if (a->liste[a->len - 1] > a->liste[a->len - 2])
-			sa(a, 1);
-		pb(a, b);
-		if (b->liste[b->len - 1] < b->liste[b->len - 2])
-			sb(b, 1);
-	}
-}*/
-
-//gere le max du debut
+//1 105 7 6 45 26 48 96 20 35 29 34 78
