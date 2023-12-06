@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:47:51 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/03 17:16:20 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:02:43 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ int	ft_ischar(char *str)
 	int	error;
 
 	i = -1;
-	error = 1;
+	error = 0;
 	while (str[++i])
 	{
 		if ((str[i] >= '0' && str[i] <= '9') || str[i] == ' '
-			|| (str[i] == '-' && str[i + 1] >= '0' && str[i] <= '9'))
+			|| (str[i] == '-' && str[i + 1] >= '0' && str[i + 1] <= '9'))
 			continue ;
 		else
 		{
-			error = 0;
+			error = 1;
 			break ;
 		}
 	}
@@ -88,7 +88,7 @@ void	ft_main_split(int argc, char **argv, t_list *a, t_list *b)
 	to_join = argv[i];
 	while (++i < argc)
 		to_join = ft_strjoin(to_join, argv[i], i);
-	if (!ft_ischar(to_join))
+	if (ft_ischar(to_join))
 	{
 		ft_free(a, b);
 		ft_error();
