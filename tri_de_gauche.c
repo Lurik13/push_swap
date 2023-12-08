@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:42:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 15:28:26 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:29:41 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,21 @@ void	ending_sort(t_list *a, t_list *b)
 	{
 		while (where_index(b, imax(b)) > b->len / 2 && b->len)
 		{
-			rrb(b, 1);
+			if (b->index[b->len - 2] > b->index[b->len - 1])
+			{
+				rrb(b, 1);
+				rrb(b, 1);
+				sb(b, 1);
+			}
+			else
+				rrb(b, 1);
 			ra_or_rra(a, b, closest_value(a, b));
 		}
 		while (where_index(b, imax(b)) <= b->len / 2 && b->len)
 			ra_or_rra(a, b, closest_value(a, b));
 	}
+	while (where_index(a, imin(a)) != 0)
+		rra(a, 1);
 }
 
 //prendre en compte pour 10 valeurs

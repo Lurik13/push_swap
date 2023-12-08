@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 14:56:35 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 12:05:34 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:18:11 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ int	sort_left_to_right(t_list *a, t_list *b)
 	int	onethird;
 	int	supplement;
 
-	twothirds = a->len / 3 * 2;
-	onethird = a->len / 3;
+	twothirds = a->len / DIVISION * 2;
+	onethird = a->len / DIVISION;
 	supplement = 0;
 	while (a->len != 3 && twothirds > 3 && onethird > 3)
 	{
 		thirds(a, b, onethird, twothirds);
-		twothirds = (a->len / 3) * 2;
-		onethird = a->len / 3;
+		twothirds = (a->len / DIVISION) * 2;
+		onethird = a->len / DIVISION;
 	}
 	while (a->len != 3)
 	{

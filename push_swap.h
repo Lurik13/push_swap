@@ -6,12 +6,15 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 15:27:58 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:28:20 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# ifndef DIVISION
+#  define DIVISION 10
+# endif
 
 # include "Printf/ft_printf.h"
 # include <stdlib.h>
