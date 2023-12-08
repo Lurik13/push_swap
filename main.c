@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 17:03:09 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:36:46 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_free(t_list *a, t_list *b)
 	free(b->liste);
 }
 
-static void	ft_end_free(t_list *a, t_list *b)
+void	ft_end_free(t_list *a, t_list *b)
 {
 	ft_free(a, b);
 	free(a->index);

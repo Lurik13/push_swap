@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:01:35 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 15:25:46 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 19:18:00 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,6 @@ static void	error_atoi(t_list *a, t_list *b)
 }
 
 int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-int	ft_listlen(char **s)
 {
 	int	i;
 

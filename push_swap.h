@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 17:17:29 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 19:19:04 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ void		ft_main_split(int argc, char **argv, t_list *a, t_list *b);
 int			*ft_calloc(int nbelem, int size);
 int			ft_split(char *s, char c, t_list *a, t_list *b);
 int			ft_strlen(const char *s);
-int			ft_listlen(char **s);
 int			ft_atoi(char *nptr, int i, t_list *a, t_list *b);
 int			imin(t_list *a);
 int			imax(t_list *a);
 int			where_index(t_list *a, int index);
 void		ft_error(void);
 void		ft_free(t_list *a, t_list *b);
+void		ft_end_free(t_list *a, t_list *b);
 void		sa(t_list *a, int dble);
 void		sb(t_list *b, int dble);
 void		ss(t_list *a, t_list *b);

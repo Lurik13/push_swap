@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:47:51 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/06 13:02:43 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 19:26:28 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,13 @@ void	ft_main_split(int argc, char **argv, t_list *a, t_list *b)
 	i = 1;
 	to_join = argv[i];
 	while (++i < argc)
-		to_join = ft_strjoin(to_join, argv[i], i);
-	if (ft_ischar(to_join))
 	{
-		ft_free(a, b);
-		ft_error();
+		to_join = ft_strjoin(to_join, argv[i], i);
+		if (ft_ischar(to_join))
+		{
+			free(to_join);
+			ft_error();
+		}
 	}
 	ft_split(to_join, ' ', a, b);
 	if (i != 2)

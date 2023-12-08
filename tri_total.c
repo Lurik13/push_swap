@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 17:04:21 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 17:17:25 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:43:32 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int already_sorted(t_list *a)
 	int i;
 
 	i = 0;
-	while (++i < a->len - 1)
+	while (++i < a->len)
 	{
 		if (a->index[i] > a->index[i - 1])
 			continue ;
