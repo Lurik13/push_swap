@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:45 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/03 17:46:51 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:48:56 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ra(t_list *a, int dble)
 	int	i;
 	int	value_tmp;
 	int	index_tmp;
-	
+
 	if (a->len > 1)
 	{
 		i = -1;
@@ -40,7 +40,7 @@ void	rb(t_list *b, int dble)
 	int	i;
 	int	value_tmp;
 	int	index_tmp;
-	
+
 	if (b->len > 1)
 	{
 		i = -1;
@@ -70,7 +70,7 @@ void	rra(t_list *a, int dble)
 	int	i;
 	int	value_tmp;
 	int	index_tmp;
-	
+
 	if (a->len > 1)
 	{
 		i = a->len;

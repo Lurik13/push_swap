@@ -6,7 +6,7 @@
 #    By: lribette <lribette@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 16:02:35 by lribette          #+#    #+#              #
-#    Updated: 2023/12/03 14:56:23 by lribette         ###   ########.fr        #
+#    Updated: 2023/12/06 13:44:47 by lribette         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SOURCES = Printf/ft_printf.c Printf/ft_putchar.c Printf/ft_putstr.c \
 		  Printf/ft_putnbr.c Printf/ft_putunbr.c Printf/ft_puthexa.c \
 		  Printf/ft_putpointer.c \
 		  ft_split_complements.c ft_split.c ft_strlen_atoi.c main.c \
-		  rrr_push.c rotate.c swap.c indexage.c tri.c
+		  rrr_push.c rotate.c swap.c \
+		  indexage.c tri_de_gauche.c tri_de_droite.c
 
 OBJECTS = $(SOURCES:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/06 12:57:50 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 14:50:21 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_error(void)
 void	ft_free(t_list *a, t_list *b)
 {
 	free(a->liste);
-	free(b->liste);	
+	free(b->liste);
 }
 
 static void	less_than_2_args(int len)
@@ -34,12 +34,13 @@ int	main(int argc, char **argv)
 {
 	t_list	a;
 	t_list	b;
+	int		supplement;
 
 	a.liste = NULL;
 	b.liste = NULL;
 	ft_main_split(argc, argv, &a, &b);
 	less_than_2_args(a.len);
-
+	
 	ft_index(&a, &b);
 
 	/*int		i;
@@ -60,8 +61,10 @@ int	main(int argc, char **argv)
 	while (++i < a.len + b.len)
 		ft_printf("%d | ", b.index[i]);*/
 
-	first_sort(&a, &b);
-	second_sort(&a);
+	supplement = sort_left_to_right(&a, &b);
+	sort_3_values(&a);
+	sort_supplement(&a, &b, supplement);
+	ending_sort(&a, &b);
 
 	/*ft_printf("\nA       : ");
 	i = -1;

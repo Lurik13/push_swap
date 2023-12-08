@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/06 12:39:48 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 14:49:46 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_list
 	int	*liste;
 	int	*index;
 	int	len;
-}t_list;
+} t_list;
 
 int			ft_ischar(char *str);
 void		ft_main_split(int argc, char **argv, t_list *a, t_list *b);
@@ -32,6 +32,9 @@ int			ft_split(char *s, char c, t_list *a, t_list *b);
 int			ft_strlen(const char *s);
 int			ft_listlen(char **s);
 int			ft_atoi(char *nptr, int i, t_list *a, t_list *b);
+int			imin(t_list *a);
+int			imax(t_list *a);
+int			where_index(t_list *a, int index);
 void		ft_error(void);
 void		ft_free(t_list *a, t_list *b);
 void		sa(t_list *a, int dble);
@@ -46,7 +49,11 @@ void		rra(t_list *a, int dble);
 void		rrb(t_list *b, int dble);
 void		rrr(t_list *a, t_list *b);
 void		ft_index(t_list *a, t_list *b);
-int			first_sort(t_list *a, t_list *b);
-void		second_sort(t_list *a);
+int			va(int one, int two);
+int			sort_left_to_right(t_list *a, t_list *b);
+void		sort_3_values(t_list *a);
+int			closest_value(t_list *a, t_list *b);
+void		sort_supplement(t_list *a, t_list *b, int supplement);
+void		ending_sort(t_list *a, t_list *b);
 
 #endif

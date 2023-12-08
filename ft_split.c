@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:35:40 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/03 18:25:33 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:46:12 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	ft_count_words(const char *s, char c)
 int	*ft_calloc(int nbelem, int size)
 {
 	int	*str;
-	int		i;
+	int	i;
 
 	str = malloc(nbelem * size);
 	if (!str)
@@ -47,19 +47,6 @@ int	*ft_calloc(int nbelem, int size)
 		str[i] = 0;
 	return (str);
 }
-
-/*static char	*ft_worddup(const char *s, int start, int end)
-{
-	char	*word;
-	int		i;
-
-	i = 0;
-	word = malloc((end - start + 1) * sizeof(char));
-	while (start < end)
-		word[i++] = s[start++];
-	word[i] = '\0';
-	return (word);
-}*/
 
 int	ft_split(char *s, char c, t_list *a, t_list *b)
 {

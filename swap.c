@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:56 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/03 18:14:50 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/06 13:49:58 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sa(t_list *a, int dble)
 {
 	int	value_tmp;
 	int	index_tmp;
-	
+
 	if (a->len > 1)
 	{
 		value_tmp = a->liste[0];
@@ -34,7 +34,7 @@ void	sb(t_list *b, int dble)
 {
 	int	value_tmp;
 	int	index_tmp;
-	
+
 	if (b->len > 1)
 	{
 		value_tmp = b->liste[0];
