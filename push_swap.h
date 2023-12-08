@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 16:28:20 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 17:17:29 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ void		rra(t_list *a, int dble);
 void		rrb(t_list *b, int dble);
 void		rrr(t_list *a, t_list *b);
 void		ft_index(t_list *a, t_list *b);
-int			va(int one, int two);
 int			sort_left_to_right(t_list *a, t_list *b);
 void		sort_3_values(t_list *a);
 int			closest_value(t_list *a, t_list *b);
 void		sort_supplement(t_list *a, t_list *b, int supplement);
 void		ending_sort(t_list *a, t_list *b);
+void		main_sort(t_list *a, t_list *b);
 
 #endif

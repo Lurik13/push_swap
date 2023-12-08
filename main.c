@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 15:08:14 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 17:03:09 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,13 @@ int	main(int argc, char **argv)
 {
 	t_list	a;
 	t_list	b;
-	int		supplement;
 
 	a.liste = NULL;
 	b.liste = NULL;
 	ft_main_split(argc, argv, &a, &b);
 	less_than_2_args(&a, &b, a.len);
 	ft_index(&a, &b);
-	supplement = sort_left_to_right(&a, &b);
-	sort_3_values(&a);
-	sort_supplement(&a, &b, supplement);
-	ending_sort(&a, &b);
+	main_sort(&a, &b);
 	ft_end_free(&a, &b);
 	return (0);
 }
