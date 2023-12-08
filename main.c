@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 14:50:21 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 15:08:14 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,20 @@ void	ft_free(t_list *a, t_list *b)
 	free(b->liste);
 }
 
-static void	less_than_2_args(int len)
+static void	ft_end_free(t_list *a, t_list *b)
+{
+	ft_free(a, b);
+	free(a->index);
+	free(b->index);
+}
+
+static void	less_than_2_args(t_list *a, t_list *b, int len)
 {
 	if (len <= 1)
+	{
+		ft_free(a, b);
 		exit(1);
+	}
 }
 
 int	main(int argc, char **argv)
@@ -39,53 +49,13 @@ int	main(int argc, char **argv)
 	a.liste = NULL;
 	b.liste = NULL;
 	ft_main_split(argc, argv, &a, &b);
-	less_than_2_args(a.len);
-	
+	less_than_2_args(&a, &b, a.len);
 	ft_index(&a, &b);
-
-	/*int		i;
-	ft_printf("\nA       : ");
-	i = -1;
-	while (++i < a.len + b.len)
-		ft_printf("%d | ", a.liste[i]);
-	i = -1;
-	ft_printf("\nIndex A : ");
-	while (++i < a.len + b.len)
-		ft_printf("%d | ", a.index[i]);
-	i = -1;
-	ft_printf("\nB       : ");
-	while (++i < a.len + b.len)
-		ft_printf("%d | ", b.liste[i]);
-	i = -1;
-	ft_printf("\nIndex B : ");
-	while (++i < a.len + b.len)
-		ft_printf("%d | ", b.index[i]);*/
-
 	supplement = sort_left_to_right(&a, &b);
 	sort_3_values(&a);
 	sort_supplement(&a, &b, supplement);
 	ending_sort(&a, &b);
-
-	/*ft_printf("\nA       : ");
-	i = -1;
-	while (++i < a.len)
-		ft_printf("%d | ", a.liste[i]);
-	i = -1;
-	ft_printf("\nIndex A : ");
-	while (++i < a.len)
-		ft_printf("%d | ", a.index[i]);
-	i = -1;
-	ft_printf("\nB       : ");
-	while (++i < b.len)
-		ft_printf("%d | ", b.liste[i]);
-	i = -1;
-	ft_printf("\nIndex B : ");
-	while (++i < b.len)
-		ft_printf("%d | ", b.index[i]);*/
-
-	ft_free(&a, &b);
-	free(a.index);
-	free(b.index);
+	ft_end_free(&a, &b);
 	return (0);
 }
 

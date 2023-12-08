@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:01:35 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 14:44:37 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/08 15:25:46 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_atoi(char *nptr, int i, t_list *a, t_list *b)
 		nega *= -1;
 		i++;
 	}
-	if (nptr[i] == '0' && (nptr[i + 1] != ' ' || i + 1 == ft_strlen(nptr)))
+	if (nptr[i] == '0' && nptr[i + 1] >= '0' && nptr[i + 1] <= '9')
 		error_atoi(a, b);
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
