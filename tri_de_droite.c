@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 14:56:35 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 17:04:58 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/10 17:37:29 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,8 @@ static void	thirds(t_list *a, t_list *b, int onethird, int twothirds)
 	{
 		if (a->index[0] <= two)
 			two_thirds(a, a->index[0], one, b);
-		else if (a->index[a->len - 1] <= two)
-		{
-			rra(a, 1);
-			two_thirds(a, a->index[0], one, b);
-		}
 		else
-			while (a->index[0] > two && b->len < two)
-				ra(a, 1);
+			ra(a, 1);
 	}
 }
 
@@ -50,7 +44,7 @@ int	sort_left_to_right(t_list *a, t_list *b)
 	twothirds = a->len / DIVISION * 2;
 	onethird = a->len / DIVISION;
 	supplement = 0;
-	while (a->len != 3 && twothirds > 3 && onethird > 3)
+	while (a->len != 3 && twothirds)
 	{
 		thirds(a, b, onethird, twothirds);
 		twothirds = (a->len / DIVISION) * 2;

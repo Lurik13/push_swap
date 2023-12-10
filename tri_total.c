@@ -6,15 +6,15 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 17:04:21 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 18:43:32 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:12:59 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int already_sorted(t_list *a)
+static int	already_sorted(t_list *a)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (++i < a->len)

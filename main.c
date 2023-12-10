@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:23:06 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 18:36:46 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:12:26 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int	main(int argc, char **argv)
 
 	a.liste = NULL;
 	b.liste = NULL;
+	if (argc == 1)
+		exit(1);
 	ft_main_split(argc, argv, &a, &b);
 	less_than_2_args(&a, &b, a.len);
 	ft_index(&a, &b);
@@ -54,7 +56,3 @@ int	main(int argc, char **argv)
 	ft_end_free(&a, &b);
 	return (0);
 }
-
-//test 0 en arg
-//1 2 4 7 3 5 9 12 6
-//gerer le unsigned long long max
