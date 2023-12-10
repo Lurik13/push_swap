@@ -6,15 +6,16 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:01:35 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 19:18:00 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/10 19:46:40 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	error_atoi(t_list *a, t_list *b)
+static void	error_atoi(t_list *a, t_list *b, char *nptr)
 {
 	ft_free(a, b);
+	free(nptr);
 	ft_error();
 }
 
@@ -43,13 +44,13 @@ int	ft_atoi(char *nptr, int i, t_list *a, t_list *b)
 		i++;
 	}
 	if (nptr[i] == '0' && nptr[i + 1] >= '0' && nptr[i + 1] <= '9')
-		error_atoi(a, b);
+		error_atoi(a, b, nptr);
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		integer = integer * 10 + nptr[i] - 48;
 		i++;
 		if (integer * nega > 2147483647 || integer * nega < -2147483648)
-			error_atoi(a, b);
+			error_atoi(a, b, nptr);
 	}
 	return (integer * nega);
 }
