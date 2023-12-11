@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:47:51 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/08 19:26:28 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/11 16:17:47 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	ft_main_split(int argc, char **argv, t_list *a, t_list *b)
 
 	i = 1;
 	to_join = argv[i];
+	ft_atoi_for_one(to_join, 0);
 	while (++i < argc)
 	{
 		to_join = ft_strjoin(to_join, argv[i], i);

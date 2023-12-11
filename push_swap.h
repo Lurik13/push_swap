@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/10 17:29:20 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/11 16:17:00 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int			*ft_calloc(int nbelem, int size);
 int			ft_split(char *s, char c, t_list *a, t_list *b);
 int			ft_strlen(const char *s);
 int			ft_atoi(char *nptr, int i, t_list *a, t_list *b);
+int			ft_atoi_for_one(char *nptr, int i);
 int			imin(t_list *a);
 int			imax(t_list *a);
 int			where_index(t_list *a, int index);
