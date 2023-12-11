@@ -6,13 +6,13 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 17:04:21 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/10 19:12:59 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/11 18:40:09 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	already_sorted(t_list *a)
+int	already_sorted(t_list *a)
 {
 	int	i;
 
@@ -41,10 +41,15 @@ void	main_sort(t_list *a, t_list *b)
 	}
 	else if (!already_sorted(a))
 	{
-		supplement = sort_left_to_right(a, b);
-		sort_3_values(a);
-		if (supplement)
-			sort_supplement(a, b, supplement);
-		ending_sort(a, b);
+		if (a->len == 5)
+			high_five(a, b);
+		else
+		{		
+			supplement = sort_left_to_right(a, b);
+			sort_3_values(a);
+			if (supplement)
+				sort_supplement(a, b, supplement);
+			ending_sort(a, b);
+		}
 	}
 }

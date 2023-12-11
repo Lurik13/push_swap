@@ -6,7 +6,7 @@
 /*   By: lribette <lribette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:04:43 by lribette          #+#    #+#             */
-/*   Updated: 2023/12/11 16:17:00 by lribette         ###   ########.fr       */
+/*   Updated: 2023/12/11 18:41:13 by lribette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,9 @@ int			sort_left_to_right(t_list *a, t_list *b);
 void		sort_3_values(t_list *a);
 int			closest_value(t_list *a, t_list *b);
 void		sort_supplement(t_list *a, t_list *b, int supplement);
+void		high_five(t_list *a, t_list *b);
 void		ending_sort(t_list *a, t_list *b);
+int			already_sorted(t_list *a);
 void		main_sort(t_list *a, t_list *b);
 
 #endif
